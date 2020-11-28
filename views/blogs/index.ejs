@@ -1,0 +1,47 @@
+<html lang="en">
+
+    <%- include('../partials/head.ejs') %>
+
+
+<body>
+   
+   <%- include('../partials/nav.ejs')   %>
+   
+<div class="container">
+    <h2 class="header mt-4 mb-4 pl-2">All blogs</h2>
+<div class="row row-cols-1 row-cols-md-2">
+        <%  if (blogs.length>0) { %>
+            <%  blogs.forEach(blog => { %>
+    <div class="col col-md-6 mb-4">
+      <div class="card">
+       
+        <div class="card-body">
+            
+            <h5  class="card-title display-5"><%= blog.title %></h5>
+           
+           <h6 class="card-subtitle mb-2 text-muted"><%= blog.snippet %></h6>
+           <p class="card-text"><%= blog.body %></p>
+           <a href="/blogs/<%= blog._id %>">
+             <button class="btn btn-dark">Read more</button>
+        
+           </a>
+        </div>
+      </div>
+    </div>
+    <% }) %>
+    <%  } else { %>
+ <p>there is no display</p>
+<% } %>
+    </div>
+    </div>
+
+
+
+
+<!-- footer section-->
+    <%- include('../partials/footer.ejs') %>
+</body>
+</html>
+
+
+

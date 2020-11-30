@@ -3,7 +3,7 @@ const mongoose= require('mongoose');
 const cookieParser= require('cookie-parser');
 const dotenv= require('dotenv').config()
 
-console.log(dotenv.parsed)
+
 
 const blogRoutes= require('./routes/blogRoutes')
 const authRoutes= require('./routes/authRoutes')

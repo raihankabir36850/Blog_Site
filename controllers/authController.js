@@ -1,5 +1,6 @@
 const User = require("../models/User");
 const jwt = require('jsonwebtoken');
+const e = require("express");
 
 // handle errors
 const handleErrors = (err) => {
@@ -72,7 +73,7 @@ module.exports.register_post = async (req, res) => {
 
 module.exports.login_post = async (req, res) => {
   const { email, password } = req.body;
-  
+  console.log(email)
 
   try {
     const user = await User.login(email, password);

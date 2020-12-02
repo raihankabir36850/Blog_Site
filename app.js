@@ -8,6 +8,8 @@ const dotenv= require('dotenv').config()
 const blogRoutes= require('./routes/blogRoutes')
 const authRoutes= require('./routes/authRoutes')
 
+
+
 const {checkUser} = require('./middleware/authMiddleware');
 
 //express app
@@ -25,7 +27,7 @@ mongoose.connect(dbURI,{ useNewUrlParser: true , useUnifiedTopology: true, useCr
 app.set('view engine', 'ejs');
 
 //middleware and static files
-app.use(express.urlencoded({ extended:true}));
+app.use(express.urlencoded({ extended:false}));
 app.use(express.static('public'));
 app.use(express.json());
 app.use(cookieParser());
@@ -47,6 +49,8 @@ app.use('/blogs',blogRoutes);
 
 //register & login
 app.use(authRoutes);
+
+
 
 
 

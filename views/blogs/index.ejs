@@ -18,11 +18,15 @@
         <div class="card-body">
             
             <h5  class="card-title display-5"><%= blog.title %></h5>
+            <h6 class="text-muted card-subtitle mb-2"><%= createdAt.toLocaleDateString() %></h6>
            
-           <h6 class="card-subtitle mb-2 text-muted"><%= blog.snippet %></h6>
+           <h5 class="card-subtitle mb-2 text-muted"><%= blog.snippet %></h5>
            <p class="card-text"><%= blog.body %></p>
            <a href="/blogs/<%= blog._id %>">
              <button class="btn btn-dark">Read more</button>
+             <a href="/blogs/<%= blog._id %>/edit">
+              <button class="btn btn-dark">Edit</button>
+          
         
            </a>
         </div>

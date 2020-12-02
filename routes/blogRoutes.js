@@ -17,4 +17,6 @@ router.get('/:id', requireAuth, blogController.blog_details)
 
 router.delete('/:id',blogController.blog_delete);
 
+router.get('/:id/edit', blogController.blog_edit)
+
 module.exports= router;
